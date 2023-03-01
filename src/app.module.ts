@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { FooResolver } from './app.resolver';
+import { LessonModule } from './lesson/lesson.module';
 
 @Module({
   imports: [
@@ -9,6 +10,7 @@ import { FooResolver } from './app.resolver';
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
+    LessonModule,
   ],
   providers: [FooResolver],
 })
